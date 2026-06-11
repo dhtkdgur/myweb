@@ -1,11 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>건축무한육면각체 한글본 | 이상</title>
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #5f6368;
+      --line: #d8d2c8;
+      --paper: #f7f2e8;
+      --paper-deep: #ece4d6;
+      --accent: #9b2f2f;
+      --shadow: rgba(38, 31, 23, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Noto Serif KR", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+      background:
+        linear-gradient(90deg, rgba(23, 23, 23, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(23, 23, 23, 0.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 42px 42px;
+      line-height: 1.75;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: clamp(20px, 4vw, 56px);
+    }
+
+    .shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+      gap: clamp(28px, 6vw, 80px);
+      align-items: end;
+      min-height: 42vh;
+      padding: clamp(28px, 6vw, 72px) 0 clamp(24px, 5vw, 56px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 9.5em;
+      font-size: clamp(2.7rem, 9vw, 7.2rem);
+      font-weight: 900;
+      line-height: 0.98;
+      word-break: keep-all;
+    }
+
+    .meta {
+      display: grid;
+      gap: 18px;
+      padding-bottom: 8px;
+    }
+
+    .meta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.8vw, 1.22rem);
+      word-break: keep-all;
+    }
+
+    .diagram {
+      position: relative;
+      width: min(320px, 76vw);
+      aspect-ratio: 1;
+      justify-self: end;
+      opacity: 0.9;
+    }
+
+    .diagram span {
+      position: absolute;
+      inset: var(--inset);
+      border: 1px solid rgba(23, 23, 23, 0.52);
+      transform: rotate(var(--rotate));
+      box-shadow: 0 16px 42px var(--shadow);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      padding: clamp(34px, 6vw, 76px) 0;
+    }
+
+    aside {
+      position: sticky;
+      top: 28px;
+      align-self: start;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    aside strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 1.04rem;
+    }
+
+    .poem {
+      display: grid;
+      gap: clamp(18px, 3vw, 30px);
+      max-width: 760px;
+    }
+
+    .stanza {
+      margin: 0;
+      padding: clamp(20px, 3vw, 34px);
+      background: rgba(255, 252, 246, 0.58);
+      border-left: 4px solid var(--accent);
+      box-shadow: 0 14px 36px rgba(38, 31, 23, 0.08);
+      font-size: clamp(1.08rem, 2vw, 1.36rem);
+      line-height: 1.95;
+      white-space: pre-line;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0 10px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 780px) {
+      header,
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: auto;
+        align-items: start;
+      }
+
+      .diagram {
+        width: min(240px, 70vw);
+        justify-self: start;
+      }
+
+      aside {
+        position: static;
+        padding: 18px 0 0;
+      }
+
+      .stanza {
+        padding: 18px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="page">
+    <div class="shell">
+      <header>
+        <div>
+          <p class="eyebrow">이상 시 · 한글 번역본</p>
+          <h1>건축무한육면각체</h1>
+        </div>
+        <div class="meta">
+          <p>한자와 옛 표기가 섞인 원문을 오늘날 읽기 쉬운 한글 표기로 옮겼습니다.</p>
+          <div class="diagram" aria-hidden="true">
+            <span style="--inset: 0%; --rotate: 0deg;"></span>
+            <span style="--inset: 10%; --rotate: 8deg;"></span>
+            <span style="--inset: 20%; --rotate: -7deg;"></span>
+            <span style="--inset: 30%; --rotate: 14deg;"></span>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <aside>
+          <strong>詩人 이상</strong>
+          본명은 김해경. 1932년 이 시를 발표하며 필명 이상을 처음 사용한 것으로 알려져 있습니다.
+        </aside>
+
+        <section class="poem" aria-label="건축무한육면각체 한글 번역본">
+          <p class="stanza">사각형의내부의사각형의내부의사각형의내부의사각형 의내부의 사각형.</p>
+
+          <p class="stanza">사각이난원운동의사각이난원운동 의 사각 이 난 원.</p>
+
+          <p class="stanza">비누가통과하는혈관의비눗내를투시하는사람.</p>
+
+          <p class="stanza">지구를모형으로만들어진지구의를모형으로만들어진지구</p>
+
+          <p class="stanza">거세된양말. (그여인의이름은워어즈였다)</p>
+
+          <p class="stanza">빈혈면포, 당신의얼굴빛깔도참새다리같습네다.</p>
+
+          <p class="stanza">평행사변형대각선방향을추진하는막대한중량.</p>
+
+          <p class="stanza">마루세이유의봄을 해람한코티의향수의마지한동양의가을.</p>
+        </section>
+      </main>
+
+      <footer>
+        <span>Responsive web page</span>
+        <span>Designed for reading on mobile and desktop</span>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
